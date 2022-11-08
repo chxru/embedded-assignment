@@ -1,9 +1,15 @@
+#include <avr/io.h>
 #include <Arduino.h>
+#include <SoftwareSerial.h>
 
-void setup() {
-  // put your setup code here, to run once:
-}
+int main()
+{
+  // initializing serial communication with PC
+  Serial.begin(9600);
 
-void loop() {
-  // put your main code here, to run repeatedly:
+  // initializing serial communication with Mega
+  SoftwareSerial MegaSerial = SoftwareSerial(8, 9);
+
+  // initializing serial communication with FPS
+  SoftwareSerial FPSSerial = SoftwareSerial(10, 11);
 }
